@@ -213,14 +213,4 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
-Temp/__EditModeScene
-Temp/UnityTempFile-c8a399bf27289b84b9334996d2554ed7
-Temp/UnityLockfile
-Temp/UnityTempFile-0129d6bff2759f0418e6dad9784bea3a
-Temp/UnityTempFile-13dc632a4c0a81e4981f51fe5ba3d6b2
-Temp/UnityTempFile-2e814dadc52e51f48b9f52e2972bba5f
-Temp/UnityTempFile-3c44711701e65ce4ab0342428347c8ae
-Temp/UnityTempFile-53dba07870c104e498e618e5f2e5ce43
-Temp/UnityTempFile-a374fbe3f295e494ea6bd1620b5fd19a
-Temp/UnityTempFile-b61a76807e6d86948887df32b92d33c5
-Temp/UnityTempFile-f449f5b44a940b146b865bb49a36cee8
+Temp/
