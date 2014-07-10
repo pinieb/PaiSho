@@ -71,8 +71,15 @@ public class PieceMover : MonoBehaviour
 
 		// check if the piece can move like that
 		Piece type = (Piece)gameObject.GetComponent(typeof(Piece));
-		if (type.CanMove(WorldToBoardConverter.WorldToBoard(position)))
+		Vector2 board = WorldToBoardConverter.WorldToBoard(position);
+		if (type.CanMove(board))
 		{
+			if (boardManager.GetOccupation((int)board.x, (int)board.y) != null &&
+			    gameManager.DroppedPiece != null)
+			{
+				return false;
+			}
+
 			return true;
 		}
 
