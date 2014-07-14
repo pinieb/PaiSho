@@ -1,23 +1,22 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PieceMover.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Jasmine.cs">
     <Files>
-      <File FileName="PaiSho.sln" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PieceDropper.cs" Line="66" Column="28" />
-      <File FileName="Assets\Scripts\Jasmine.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BoardInitializer.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Membership.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\BoardManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\WorldToBoardConverter.cs" Line="20" Column="2" />
+      <File FileName="Assets\Scripts\SovereigntyManager.cs" Line="73" Column="28" />
+      <File FileName="Assets\Scripts\PieceMover.cs" Line="81" Column="18" />
       <File FileName="Assets\Scripts\Piece.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\HarmonyManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PieceMover.cs" Line="33" Column="2" />
+      <File FileName="Assets\Scripts\Jasmine.cs" Line="93" Column="9" />
+      <File FileName="Assets\Scripts\PieceDropper.cs" Line="98" Column="1" />
       <File FileName="Assets\Scripts\GameManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\WorldToBoardConverter.cs" Line="18" Column="54" />
+      <File FileName="Assets\Scripts\BoardManager.cs" Line="338" Column="56" />
+      <File FileName="Assets\Scripts\Membership.cs" Line="150" Column="20" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="E:\Pete\Documents\Unity\PaiSho\Assets\Scripts\GameManager.cs" line="55" />
+      <Breakpoint file="C:\Users\Pete\Documents\GitHub\PaiSho\Assets\Scripts\PieceMover.cs" line="87" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

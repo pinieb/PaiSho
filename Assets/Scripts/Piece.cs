@@ -39,6 +39,11 @@ public class Piece : MonoBehaviour
 		return false;
 	}
 
+    public virtual bool CanMove(Vector3 source, Vector3 target)
+    {
+        return false;
+    }
+
 	public virtual bool CanDrop (Vector3 desiredPosition)
 	{
 		return false;

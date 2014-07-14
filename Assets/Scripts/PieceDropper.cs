@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PieceDropper : MonoBehaviour 
 {
@@ -8,6 +9,7 @@ public class PieceDropper : MonoBehaviour
 	public int Available;
 	public Player Owner;
 	public GameManager gameManager;
+    public SovereigntyManager sovereigntyManager;
 
 	private Vector3 screenPoint;
 	GameObject tile;
@@ -21,6 +23,7 @@ public class PieceDropper : MonoBehaviour
 			//Debug.Log("clicked!");
 			tile = (GameObject)Instantiate(TileType, screenPoint, Quaternion.identity);
 			((PieceMover)tile.GetComponent(typeof(PieceMover))).boardManager = boardManager;
+            ((PieceMover)tile.GetComponent(typeof(PieceMover))).sovereigntyManager = sovereigntyManager;
 			p = ((Piece)tile.GetComponent(typeof(Piece)));
 			p.boardManager = boardManager;
 			p.Owner = Owner;
@@ -92,14 +95,41 @@ public class PieceDropper : MonoBehaviour
 		{
 			return false;
 		}
+
+        Vector2 board = WorldToBoardConverter.WorldToBoard(position);
+
 		
 		// check if the piece can move like that
 		Piece type = (Piece)tile.GetComponent(typeof(Piece));
-		if (type.CanDrop(position))
+		if (type.CanDrop(board))
 		{
+            bool single;
+            Piece ruler = sovereigntyManager.WhoHasSovereignty((int)board.x, (int)board.y, out single);
+            
+            if (ruler != null && ruler.Owner != type.Owner)
+            {
+                if (single)
+                {
+                    return false;
+                }
+                else if (p.CanMove(board, ruler.currentPosition))
+                {
+                    return false;
+                }
+            }
+
+            List<Sovereign> sovereigns = sovereigntyManager.GetSovereigns();
+            foreach (Sovereign s in sovereigns)
+            {
+                if (s.single && s.piece.Owner != type.Owner && p.CanMove(board, s.piece.currentPosition))
+                {
+                    return false;
+                }
+            }
+
 			return true;
 		}
-		
+	
 		return false;
 	}
 }

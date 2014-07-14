@@ -323,7 +323,6 @@ public class BoardManager : MonoBehaviour
 
 	public void MovePiece(int sourceX, int sourceY, int destinationX, int destinationY)
 	{
-		// TODO: handle captures
 		if (occupation[destinationX, destinationY] != null)
 		{
 			Pieces.Remove((Piece)occupation[destinationX, destinationY].GetComponent(typeof(Piece)));

@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PieceMover : MonoBehaviour
 {
 	public BoardManager boardManager;
 	public GameManager gameManager;
+    public SovereigntyManager sovereigntyManager;
 	private Vector3 screenPoint;
 	private Vector3 initialPosition;
 	private Piece p;
@@ -79,6 +81,33 @@ public class PieceMover : MonoBehaviour
 			{
 				return false;
 			}
+
+            if (gameManager.DroppedPiece == p)
+            {
+                bool single;
+                Piece ruler = sovereigntyManager.WhoHasSovereignty((int)board.x, (int)board.y, out single);
+
+                if (ruler != null && ruler.Owner != p.Owner)
+                {
+                    if (single)
+                    {
+                        return false;
+                    }
+                    else if (p.CanMove(board, ruler.currentPosition))
+                    {
+                        return false;
+                    }
+                }
+
+                List<Sovereign> sovereigns = sovereigntyManager.GetSovereigns();
+                foreach (Sovereign s in sovereigns)
+                {
+                    if (s.single && s.piece.Owner != type.Owner && p.CanMove(board, s.piece.currentPosition))
+                    {
+                        return false;
+                    }
+                }
+            }
 
 			return true;
 		}

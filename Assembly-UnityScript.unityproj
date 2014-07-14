@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{A549C3E0-E829-7AF1-993C-A2C386B3FAD7}</ProjectGuid>
+	<ProjectGuid>{B6D26C88-C5B0-0DE2-B7B1-63D62E39A742}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,21 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\BoardInitializer.cs" />
-     <Compile Include="Assets\Scripts\BoardManager.cs" />
-     <Compile Include="Assets\Scripts\CountUpdater.cs" />
-     <Compile Include="Assets\Scripts\EndTurnButton.cs" />
-     <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\HarmonyManager.cs" />
-     <Compile Include="Assets\Scripts\Jasmine.cs" />
-     <Compile Include="Assets\Scripts\Membership.cs" />
-     <Compile Include="Assets\Scripts\Piece.cs" />
-     <Compile Include="Assets\Scripts\PieceDropper.cs" />
-     <Compile Include="Assets\Scripts\PieceMover.cs" />
-     <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\ScoreUpdater.cs" />
-     <Compile Include="Assets\Scripts\SovereigntyManager.cs" />
-     <Compile Include="Assets\Scripts\WorldToBoardConverter.cs" />
+     <Compile Include="Assets\SovereigntyManager.js" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

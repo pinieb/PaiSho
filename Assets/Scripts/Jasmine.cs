@@ -12,19 +12,24 @@ public class Jasmine : Piece
 		Type = TileTypes.Jasmine;
 	}
 
-	public override bool CanMove (Vector3 desired)
-	{
+    public override bool CanMove(Vector3 desiredPosition)
+    {
+        return CanMove(currentPosition, desiredPosition);
+    }
+
+	public override bool CanMove (Vector3 source, Vector3 target)
+    {
 		// Can move one intersection vertically or horizontally, and then one diagonally
 		// Cannot collide with pieces on its path
 		// Cannot jump diagonally over walls
 
-		if (desired.x < 0f || desired.x > 18f || desired.y < 0f|| desired.y > 18f)
+		if (target.x < 0f || target.x > 18f || target.y < 0f|| target.y > 18f)
 		{
 			return false;
 		}
 
-		Membership currentMembership = boardManager.GetMembership((int)currentPosition.x, (int)currentPosition.y);
-		Membership targetMembership = boardManager.GetMembership((int)desired.x, (int)desired.y);
+		Membership currentMembership = boardManager.GetMembership((int)source.x, (int)source.y);
+		Membership targetMembership = boardManager.GetMembership((int)target.x, (int)target.y);
 		// check that it's a valid intersection
 		if (targetMembership == null)
 		{
@@ -32,10 +37,11 @@ public class Jasmine : Piece
 		}
 
 		// check wall pause
-		if ((Mathf.Abs (currentPosition.x - desired.x) == 0 && Mathf.Abs(currentPosition.y - desired.y) == 1) ||
-		    (Mathf.Abs (currentPosition.x - desired.x) == 1 && Mathf.Abs(currentPosition.y - desired.y) == 0))
+        if ((Mathf.Abs (source.x - target.x) == 0 && Mathf.Abs(source.y - target.y) == 1) ||
+            (Mathf.Abs (source.x - target.x) == 1 && Mathf.Abs(source.y - target.y) == 0))
 		{
-			if (currentMembership.OnlyYellow && boardManager.GetMembership((int)desired.x, (int)desired.y).IsWall())
+            Membership desMem = boardManager.GetMembership((int)target.x, (int)target.y);
+			if (currentMembership.OnlyYellow && desMem.IsWall() && !desMem.Torii)
 			{
 				return true;
 			}
@@ -43,21 +49,21 @@ public class Jasmine : Piece
 
 		Membership stepMembership;
 		float x, y;
-		if (Mathf.Abs(currentPosition.x - desired.x) == 2 && Mathf.Abs(currentPosition.y - desired.y) == 1)
+        if (Mathf.Abs(source.x - target.x) == 2 && Mathf.Abs(source.y - target.y) == 1)
 		{
 			// check paths for tiles and walls
 			// get path
 			// get first ixn
-			x = currentPosition.x + Mathf.Sign(desired.x - currentPosition.x);
-			y = currentPosition.y;
+            x = source.x + Mathf.Sign(target.x - source.x);
+            y = source.y;
 		}
-		else if (Mathf.Abs(currentPosition.x - desired.x) == 1 && Mathf.Abs(currentPosition.y - desired.y) == 2)
+        else if (Mathf.Abs(source.x - target.x) == 1 && Mathf.Abs(source.y - target.y) == 2)
 		{
 			// check paths for tiles and walls
 			// get path
 			// get first ixn
-			x = currentPosition.x;
-			y = currentPosition.y + Mathf.Sign(desired.y - currentPosition.y);
+            x = source.x;
+            y = source.y + Mathf.Sign(target.y - source.y);
 		}
 		else
 		{
@@ -65,7 +71,7 @@ public class Jasmine : Piece
 		}
 
 		stepMembership = boardManager.GetMembership((int)x, (int)y);
-		if (stepMembership == null || (currentMembership.OnlyYellow && stepMembership.IsWall()))
+		if (stepMembership == null || (currentMembership.OnlyYellow && stepMembership.IsWall() && !stepMembership.Torii))
 		{
 			return false;
 		}
@@ -78,12 +84,11 @@ public class Jasmine : Piece
 		return false;
 	}
 
-	public override bool CanDrop (Vector3 desiredPosition)
+    public override bool CanDrop (Vector3 boardPoint)
 	{
-		Vector2 boardPoint = WorldToBoardConverter.WorldToBoard(desiredPosition);
 		Membership m = boardManager.GetMembership((int)boardPoint.x, (int)boardPoint.y);
 
-		if (m != null && m.Neutral && !m.IsWall())
+		if (m != null && m.Neutral && !(m.IsWall() && !m.Torii))
 		{
 			if (boardManager.GetOccupation((int)boardPoint.x, (int)boardPoint.y) == null)
 			{

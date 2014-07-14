@@ -149,7 +149,7 @@ public class Membership
 
 	public bool IsWall()
 	{
-		if (YellowGarden && (RedGarden || WhiteGarden) && !(EastTorii || WestTorii || NorthTorii || SouthTorii))
+		if (YellowGarden && (RedGarden || WhiteGarden))
 		{
 			return true;
 		}
