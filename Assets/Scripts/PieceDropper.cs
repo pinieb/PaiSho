@@ -105,7 +105,9 @@ public class PieceDropper : MonoBehaviour
 		{
             bool single;
             Piece ruler = sovereigntyManager.WhoHasSovereignty((int)board.x, (int)board.y, out single);
-            
+
+            // can't be dropped into a singly controlled garden
+            // or into threat range of a partial sovereign in its own garden
             if (ruler != null && ruler.Owner != type.Owner)
             {
                 if (single)
@@ -118,6 +120,7 @@ public class PieceDropper : MonoBehaviour
                 }
             }
 
+            // can't threaten a single sovereign on drop
             List<Sovereign> sovereigns = sovereigntyManager.GetSovereigns();
             foreach (Sovereign s in sovereigns)
             {

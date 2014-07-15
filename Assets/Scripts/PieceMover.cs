@@ -82,11 +82,14 @@ public class PieceMover : MonoBehaviour
 				return false;
 			}
 
+            // rules governing newly dropped pieces
             if (gameManager.DroppedPiece == p)
             {
                 bool single;
                 Piece ruler = sovereigntyManager.WhoHasSovereignty((int)board.x, (int)board.y, out single);
 
+                // can't move into garden controlled by single sovereignty
+                // or to threaten a partial sovereign in its own garden
                 if (ruler != null && ruler.Owner != p.Owner)
                 {
                     if (single)
@@ -99,6 +102,7 @@ public class PieceMover : MonoBehaviour
                     }
                 }
 
+                // make sure no single sovereign is threatened
                 List<Sovereign> sovereigns = sovereigntyManager.GetSovereigns();
                 foreach (Sovereign s in sovereigns)
                 {

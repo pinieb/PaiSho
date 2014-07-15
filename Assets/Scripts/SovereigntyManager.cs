@@ -118,7 +118,7 @@ public class SovereigntyManager : MonoBehaviour
                 GameObject o = boardManager.GetOccupation(i, j);
                 if (o != null)
                 {
-                    list.Add((Piece)o.GetComponent(typeof(Piece)));
+                    temp.Add((Piece)o.GetComponent(typeof(Piece)));
                 }
             }
         }
@@ -140,7 +140,7 @@ public class SovereigntyManager : MonoBehaviour
                 GameObject o = boardManager.GetOccupation(i, j);
                 if (o != null)
                 {
-                    list.Add((Piece)o.GetComponent(typeof(Piece)));
+                    temp.Add((Piece)o.GetComponent(typeof(Piece)));
                 }
             }
         }
@@ -162,7 +162,7 @@ public class SovereigntyManager : MonoBehaviour
                 GameObject o = boardManager.GetOccupation(i, j);
                 if (o != null)
                 {
-                    list.Add((Piece)o.GetComponent(typeof(Piece)));
+                    temp.Add((Piece)o.GetComponent(typeof(Piece)));
                 }
             }
         }
