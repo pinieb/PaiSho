@@ -141,6 +141,21 @@ public class Jasmine: Piece
 
 		return false;
 	}
+
+    public override bool CanCapture(Vector3 source, Vector3 target)
+    {
+        return CanMove(source, target);
+    }
+
+    public override bool CanCapture(Vector3 target)
+    {
+        return CanCapture(currentPosition, target);
+    }
+
+    public override List<Vector2> GetHarmoniousIntersections()
+    {
+        return GetPossibleMoves();
+    }
 }
 
 

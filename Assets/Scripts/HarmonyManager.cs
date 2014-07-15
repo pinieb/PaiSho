@@ -34,7 +34,7 @@ public class HarmonyManager : MonoBehaviour
 			}
 
 			// See if it's sending any harmony
-			foreach (Vector2 v in p.GetPossibleMoves())
+			foreach (Vector2 v in p.GetHarmoniousIntersections())
 			{
 				GameObject o = boardManager.GetOccupation((int)v.x, (int)v.y);
 				if (o != null)

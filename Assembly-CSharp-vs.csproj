@@ -48,11 +48,14 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BoardInitializer.cs" />
      <Compile Include="Assets\Scripts\BoardManager.cs" />
+     <Compile Include="Assets\Scripts\Chrysanthemum.cs" />
      <Compile Include="Assets\Scripts\CountUpdater.cs" />
      <Compile Include="Assets\Scripts\EndTurnButton.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\HarmonyManager.cs" />
      <Compile Include="Assets\Scripts\Jasmine.cs" />
+     <Compile Include="Assets\Scripts\Lily.cs" />
+     <Compile Include="Assets\Scripts\LilyAndChrysanthemumMechanics.cs" />
      <Compile Include="Assets\Scripts\Membership.cs" />
      <Compile Include="Assets\Scripts\Piece.cs" />
      <Compile Include="Assets\Scripts\PieceDropper.cs" />

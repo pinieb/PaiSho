@@ -351,4 +351,17 @@ public class BoardManager : MonoBehaviour
 
 		return l;
 	}
+
+    public bool IsValidBoardPoint(Vector2 boardPoint)
+    {
+        if (boardPoint.x >= 0 && boardPoint.x <= 18 &&
+            boardPoint.y >= 0 && boardPoint.y <= 18)
+        {
+            if (GetMembership((int)boardPoint.x, (int)boardPoint.y) != null)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

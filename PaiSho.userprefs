@@ -1,12 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SovereigntyManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Chrysanthemum.cs">
     <Files>
-      <File FileName="Assets\Scripts\Jasmine.cs" Line="17" Column="58" />
-      <File FileName="Assets\Scripts\Piece.cs" Line="42" Column="63" />
-      <File FileName="Assets\Scripts\SovereigntyManager.cs" Line="86" Column="5" />
-      <File FileName="Assets\Scripts\PieceDropper.cs" Line="110" Column="77" />
-      <File FileName="Assets\Scripts\PieceMover.cs" Line="48" Column="13" />
+      <File FileName="Assets\Scripts\Lily.cs" Line="13" Column="1" />
+      <File FileName="Assets\Scripts\Chrysanthemum.cs" Line="23" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

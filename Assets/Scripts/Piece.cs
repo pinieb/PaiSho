@@ -34,12 +34,28 @@ public class Piece : MonoBehaviour
 		protected set;
 	}
 
+    public Piece()
+    {
+        Harmony = 0;
+        currentPosition = new Vector3(0, 0, -1);
+    }
+
 	public virtual bool CanMove (Vector3 desiredPosition)
 	{
 		return false;
 	}
 
     public virtual bool CanMove(Vector3 source, Vector3 target)
+    {
+        return false;
+    }
+
+    public virtual bool CanCapture(Vector3 target)
+    {
+        return false;
+    }
+
+    public virtual bool CanCapture(Vector3 source, Vector3 target)
     {
         return false;
     }
@@ -53,6 +69,11 @@ public class Piece : MonoBehaviour
 	{
 		return null;
 	}
+
+    public virtual List<Vector2> GetHarmoniousIntersections()
+    {
+        return null;
+    }
 
 	public virtual TileTypes GetTileType ()
 	{

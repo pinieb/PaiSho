@@ -114,7 +114,7 @@ public class PieceDropper : MonoBehaviour
                 {
                     return false;
                 }
-                else if (p.CanMove(board, ruler.currentPosition))
+                else if (p.CanCapture(board, ruler.currentPosition))
                 {
                     return false;
                 }
@@ -124,7 +124,7 @@ public class PieceDropper : MonoBehaviour
             List<Sovereign> sovereigns = sovereigntyManager.GetSovereigns();
             foreach (Sovereign s in sovereigns)
             {
-                if (s.single && s.piece.Owner != type.Owner && p.CanMove(board, s.piece.currentPosition))
+                if (s.single && s.piece.Owner != type.Owner && p.CanCapture(board, s.piece.currentPosition))
                 {
                     return false;
                 }
