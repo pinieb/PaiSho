@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\PieceDropper.cs" />
      <Compile Include="Assets\Scripts\PieceMover.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\Rose.cs" />
      <Compile Include="Assets\Scripts\ScoreUpdater.cs" />
      <Compile Include="Assets\Scripts\SovereigntyManager.cs" />
      <Compile Include="Assets\Scripts\WorldToBoardConverter.cs" />

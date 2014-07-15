@@ -1,23 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Jasmine.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SovereigntyManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\WorldToBoardConverter.cs" Line="20" Column="2" />
-      <File FileName="Assets\Scripts\SovereigntyManager.cs" Line="73" Column="28" />
-      <File FileName="Assets\Scripts\PieceMover.cs" Line="81" Column="18" />
-      <File FileName="Assets\Scripts\Piece.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Jasmine.cs" Line="93" Column="9" />
-      <File FileName="Assets\Scripts\PieceDropper.cs" Line="98" Column="1" />
-      <File FileName="Assets\Scripts\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\WorldToBoardConverter.cs" Line="18" Column="54" />
-      <File FileName="Assets\Scripts\BoardManager.cs" Line="338" Column="56" />
-      <File FileName="Assets\Scripts\Membership.cs" Line="150" Column="20" />
+      <File FileName="Assets\Scripts\Jasmine.cs" Line="17" Column="58" />
+      <File FileName="Assets\Scripts\Piece.cs" Line="42" Column="63" />
+      <File FileName="Assets\Scripts\SovereigntyManager.cs" Line="86" Column="5" />
+      <File FileName="Assets\Scripts\PieceDropper.cs" Line="110" Column="77" />
+      <File FileName="Assets\Scripts\PieceMover.cs" Line="48" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\Pete\Documents\GitHub\PaiSho\Assets\Scripts\PieceMover.cs" line="87" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

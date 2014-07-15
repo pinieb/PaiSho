@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Jasmine : Piece
+public class Jasmine: Piece
 {
 	public Jasmine ()
 	{
