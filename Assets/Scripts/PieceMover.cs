@@ -76,15 +76,28 @@ public class PieceMover : MonoBehaviour
 		Vector2 board = WorldToBoardConverter.WorldToBoard(position);
 		if (type.CanMove(board))
 		{
-			if (boardManager.GetOccupation((int)board.x, (int)board.y) != null &&
-			    gameManager.DroppedPiece != null)
-			{
-				return false;
-			}
+            GameObject o = boardManager.GetOccupation((int)board.x, (int)board.y);
+			if (o != null)
+            {
+                Piece objPiece = (Piece)o.GetComponent(typeof(Piece));
+                if (objPiece.Owner != p.Owner &&
+                    p.CanCapture(board))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
 
             // rules governing newly dropped pieces
             if (gameManager.DroppedPiece == p)
             {
+                if (boardManager.GetOccupation((int)board.x, (int)board.y) != null)
+                {
+                        return false;
+                }
                 bool single;
                 Piece ruler = sovereigntyManager.WhoHasSovereignty((int)board.x, (int)board.y, out single);
 

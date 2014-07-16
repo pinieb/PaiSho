@@ -7,6 +7,12 @@ public class Sovereign
     // TODO override equals for efficiency
     public Piece piece;
     public bool single;
+
+    public override bool Equals(object o)
+    {
+        Piece p = o as Piece;
+        return piece == p;
+    }
 }
 
 public class SovereigntyManager : MonoBehaviour
