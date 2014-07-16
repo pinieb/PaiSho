@@ -4,7 +4,6 @@ using System.Collections.Generic;
 
 public class Sovereign
 {
-    // TODO override equals for efficiency
     public Piece piece;
     public bool single;
 
@@ -12,6 +11,11 @@ public class Sovereign
     {
         Piece p = o as Piece;
         return piece == p;
+    }
+
+    public override int GetHashCode()
+    {
+        return base.GetHashCode();
     }
 }
 
